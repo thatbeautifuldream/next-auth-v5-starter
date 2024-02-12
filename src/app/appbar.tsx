@@ -1,10 +1,12 @@
 import { auth, signIn, signOut } from "auth";
+import Link from "next/link";
 import React from "react";
 
 async function AppBar() {
   const session = await auth();
   return (
     <div className="p-2 flex gap-2">
+      <Link href="/client-page">Client Page</Link>
       <div className="ml-auto">
         {session && session.user ? (
           <div className="flex gap-2 items-center">
@@ -40,6 +42,7 @@ async function AppBar() {
             </button>
           </form>
         )}
+        L
       </div>
     </div>
   );
