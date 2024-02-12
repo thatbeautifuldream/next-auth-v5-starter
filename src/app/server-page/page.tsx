@@ -1,9 +1,8 @@
-"use client";
-import { useSession } from "next-auth/react";
+import { auth } from "auth";
 import React from "react";
 
-function Page() {
-  const { data: session } = useSession();
+async function Page() {
+  const session = await auth();
   if (!session || !session.user)
     return (
       <div className="text-red-500 font-semibold p-5">
@@ -12,7 +11,7 @@ function Page() {
     );
   return (
     <div className="text-green-500 font-semibold p-5">
-      This is a protected client page.
+      This is a protected server page.
     </div>
   );
 }

@@ -9,6 +9,9 @@ async function AppBar() {
       <Link className="text-white font-semibold text-sm" href="/client-page">
         Client Page
       </Link>
+      <Link className="text-white font-semibold text-sm" href="/server-page">
+        Server Page
+      </Link>
       <div className="ml-auto">
         {session && session.user ? (
           <div className="flex gap-2 items-center">
