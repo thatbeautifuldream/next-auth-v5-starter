@@ -20,6 +20,13 @@ const credentialsConfig = CredentialsProvider({
 
 const config = {
   providers: [Google, credentialsConfig],
+  callbacks: {
+    authorized({ request, auth }) {
+      const { pathname } = request.nextUrl;
+      if (pathname === "/middleware-page") return !!auth;
+      return true;
+    },
+  },
 } satisfies NextAuthConfig;
 
 export const { handlers, auth, signIn, signOut } = NextAuth(config);

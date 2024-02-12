@@ -10,7 +10,7 @@ async function Page() {
       </div>
     );
   return (
-    <div className="text-green-500 font-semibold p-5">
+    <div className="text-green-300 font-semibold p-5">
       This is a protected server page.
     </div>
   );
